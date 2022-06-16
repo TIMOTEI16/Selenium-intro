@@ -31,7 +31,7 @@ public class RegistrationTest {
 
 
     @Test
-    public void cannotRegisterWithValidCredentials() {
+    public void cannotRegisterWithInvalidCredentials() {
         registrationPage.registerUs("Male", "Timmy", "Test", "16", "May", "1999", "timmyyy@test.com", "Endava", true, "test123", "test123");
         assertEquals(registrationPage.getErrorMessage(), "The specified email already exists");
     }
