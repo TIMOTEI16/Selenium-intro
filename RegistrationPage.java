@@ -42,6 +42,9 @@ public class RegistrationPage {
     @FindBy(xpath = "//li[contains(text(),'The specified email already exists')]")
     private WebElement errorMessage;
 
+    @FindBy(xpath = "//span[@id='FirstName-error']")
+    private WebElement errorMessagee;
+
     private WebDriver driver;
 
     public RegistrationPage(WebDriver driver) {
@@ -104,6 +107,9 @@ public class RegistrationPage {
     public String getErrorMessage() {
         return errorMessage.getText();
 
+    }
+    public String getErrorMessagee() {
+        return errorMessagee.getText();
     }
 
 }
