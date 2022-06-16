@@ -31,10 +31,17 @@ public class RegistrationTest {
 
 
     @Test
-    public void cannotRegisterWithTheSameEmail() {
+    public void canNotRegisterWithTheSameEmail() {
         registrationPage.registerUs("Male", "Timmy", "Test", "16", "May", "1999", "timmyyy@test.com", "Endava", true, "test123", "test123");
         assertEquals(registrationPage.getErrorMessage(), "The specified email already exists");
     }
+
+    @Test
+    public void canNotRegisterWithoutFirstName (){
+        registrationPage.registerUs("Male", "", "Test", "16", "May", "1999", "timmyyy@test.com", "Endava", true, "test123", "test123");
+        assertEquals(registrationPage.getErrorMessagee(), "First name is required.");
+    }
+
 
     @AfterEach
     public void tearDown() {
